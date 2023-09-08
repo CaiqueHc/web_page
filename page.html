@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J & C</title>
+    <!-- Inclua o Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Se você deseja personalizar a fonte, adicione um estilo CSS personalizado aqui -->
+    <style>
+        /* Background personalizável */
+        body {
+            background-image: url('https://img.freepik.com/fotos-gratis/fundo-de-textura-aquarela-violeta_1083-172.jpg?1&w=1380&t=st=1694041972~exp=1694042572~hmac=af66a30b9cab4cdf8ecfa4a17c27a00dc91401b4f083445c7b5d6e6871e51942');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Estilo do botão */
+        .custom-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: #127909;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Estilo do botão ao passar o mouse */
+        .custom-button:hover {
+            background-color: #309c26;
+        }
+
+        /* Estilo do pop-up */
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(138, 132, 132, 0.5);
+            /* Adiciona um fundo semitransparente para desfocar o conteúdo de fundo */
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            /* Coloca o pop-up acima de outros elementos */
+            backdrop-filter: blur(5px);
+            /* Aplica o efeito de desfoque ao fundo */
+        }
+
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-align: center;
+            word-wrap: break-word;
+            /* Permite que as palavras se quebrem em linhas */
+        }
+
+        #img_custom{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pop-up -->
+    <div class="popup-container" id="popup">
+        <div class="popup">
+            <p>Bem Vindo(a)!</p>
+            <p>Lembre-se, estas são apenas algumas sujestões, fique à vontade para sua escolha</p>
+            <button onclick="fecharPopup()">Entendido</button>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center" id="titulo">
+                <!-- Título personalizável -->
+                <h1 class="custom-font">Sugestões</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Espaço para as imagens -->
+            <div class="col-md-3 mb-4">
+                <img src="https://abcdaconstrucao.fbitsstatic.net/img/p/panela-de-pressao-em-inox-solar-4-5l-62513-223-tramontina-73457/259960-1.jpg?w=730&h=730&v=no-value"
+                    alt="Imagem 1" class="img-fluid " id="img_custom">
+                <h3 class="custom-font text-center">Panela de Pressão de Rosca</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://a-static.mlcdn.com.br/800x560/kit-utensilios-de-cozinha-silicone-12-pecas-e-suporte-cesto-porta-talheres-escumadeira-concha-espatula-colher-tudo-para-cozinha/tudopracozinha/wx09280-grafite/d26736003e06e6e7319d2e856b0c6def.jpeg"
+                    alt="Imagem 2" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Kit Utensílios Silicone</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://lojaacal.vteximg.com.br/arquivos/ids/188837-1000-1000/Varal-de-Chao-162m-Aco-Big-Secalux-188081.jpg?v=637842403435270000"
+                    alt="Imagem 3" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Varal</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://www.horizontevirtual.com.br/erp/public/uploads/galeria/d6e0c159bdc6da00c9ef1bd6fba54d59.jpg"
+                    alt="Imagem 4" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Kit Saboneteira e Lixeira</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/c/o/cobertor-de-casal-1-80x2-20m-canelado_695248_4.jpg"
+                    alt="Imagem 6" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Cobertor Casal</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://images.tcdn.com.br/img/img_prod/638678/toalha_de_banho_linha_lollipop_70cmx_135cm_buddemeyer_1751_1_810de476510d778ddd4d7ac704273098_20230713102826.jpg"
+                    alt="Imagem 7" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Toalha de Banho</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://electrolux.vtexassets.com/arquivos/ids/229322/A10N1-1.jpg?v=638246995877000000"
+                    alt="Imagem 8" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Aspirador de Pó</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://cdn.leroymerlin.com.br/products/espelho_grande_oval_de_base_reta_com_moldura_em_metal_luxo_co_1571337518_07ae_600x600.jpg"
+                    alt="Imagem 9" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Espelho</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://irmaospaim.com.br/177-large_default/liquidificador-liqmax.jpg" alt="Imagem 10"
+                    class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Liquidificador</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://cdn.awsli.com.br/951/951982/produto/146128270/85efaea20b.jpg" alt="Imagem 11"
+                    class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Torradeira</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://jcsbrasil.vteximg.com.br/arquivos/ids/155627-1000-1000/bat279-batedeira-especial-classic-edition-1433.jpg?v=636082579418200000"
+                    alt="Imagem 12" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Batedeira</h3>
+            </div>
+            <div class="col-md-3 mb-4">
+                <img src="https://lojaalfa.com/image/cache/catalog/bling/jogo-de-panela-antiaderente-tramontina-coimbra-5-pecas0-1200x1200.jpg"
+                    alt="Imagem 13" class="img-fluid" id="img_custom">
+                <h3 class="custom-font text-center">Joga de Panela</h3>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <!-- Título "PIX" -->
+                <h2 class="custom-font">PIX</h2>
+                <!-- Linha para chave e QR Code -->
+                <div class="mt-4  text-center">
+                    <!-- Insira sua chave PIX aqui -->
+                    <p class="custom-font">Celular: (18) 99628-1225</p>
+                    <a href="">https://nubank.com.br/pagar/7im3/gU5VXaO1qV <br></a>
+                    <!-- Insira o código QR Code aqui -->
+                    <img src="C:\Desenvolvimento\Qr.png"
+                        width="307" height="240" alt="QR Code" class="img-fluid" id="img_custom">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Botão no canto inferior esquerdo -->
+    <button class="custom-button" onclick="window.location.href='https://wa.me/5518996281225?text=Oi, pode me ajudar?'"">WhatsApp</button>	
+	<!-- Rodapé isolado -->
+    <footer class=" text-center mt-5">
+        <p class="custom-font">Juliana & Caique - Save the Date 18/11/2023</p>
+        </footer>
+
+        <!-- Inclua o Bootstrap JS (opcional, dependendo do que você deseja fazer) -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            function mostrarPopup() {
+                var popup = document.getElementById('popup');
+                popup.style.display = 'flex';
+            }
+
+            function fecharPopup() {
+                var popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+
+            // Exibir o pop-up automaticamente ao carregar a página
+            window.onload = function () {
+                mostrarPopup();
+            };
+        </script>
+</body>
+
+</html>
+</body>
+
+</html>
